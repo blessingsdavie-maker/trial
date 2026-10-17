@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#263a35">
+  <title>Bestie Dispatch for Nemo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <video class="site-background" autoplay muted loop playsinline poster="New%20folder/images/IMAGE%201.jpeg" aria-hidden="true">
+    <source src="New%20folder/videos/BACKGROUND%20VIDEO.mp4" type="video/mp4">
+  </video>
+  <div class="site-shade" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="wordmark" href="#home">bestie dispatch</a>
+    <nav aria-label="Main navigation">
+      <a href="#replay">Replay</a>
+      <a href="#memories">Exhibits</a>
+      <a href="#email">Send a message</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">For Nemo</p>
+        <h1 id="hero-title">Hi Katerina this is a<br>bestie spam alert.</h1>
+        <p class="hero-note">We've had history and memories, and I will honor them because I value you. I will keep the promises I made to you.</p>
+        <p class="hero-note hero-followup">Trying to create a safe space for you and me, but for now, email will have to do.</p>
+        <a class="mail-button" id="email" href="mailto:barakawork99@gmail.com?subject=Nemo%20%2F%20Katerina%20-%20Urgent%20Bestie%20Spam&body=No%20emergency.%20Just%20a%20reminder%20that%20we%27ve%20had%20history%20and%20memories%2C%20I%20value%20you%2C%20and%20I%27ll%20keep%20the%20promises%20I%20made.%20Reply%20so%20I%20can%20keep%20spamming%20you.">
+          <span aria-hidden="true">✉</span> Spam me because you can
+        </a>
+        <p class="email-aside">Your official spam inbox: <a href="mailto:barakawork99@gmail.com">barakawork99@gmail.com</a><br>Unlimited memes. Occasional feelings. Absolutely no boundaries.</p>
+      </div>
+      <span class="hero-index" aria-hidden="true">INBOX STATUS: LOVED</span>
+    </section>
+
+    <section class="reel-strip" id="replay" aria-labelledby="replay-title">
+      <div class="reel-heading">
+        <p class="eyebrow">For your eyes😉</p>
+        <h2 id="replay-title">Spam space.</h2>
+      </div>
+      <div class="clips">
+        <figure class="clip clip-landscape">
+          <video autoplay muted loop controls playsinline preload="metadata" poster="New%20folder/images/IMAGE%201.jpeg">
+            <source src="New%20folder/videos/VIDEO%201.mp4" type="video/mp4">
+            Your browser does not support this video.
+          </video>
+          
+        </figure>
+        <figure class="clip clip-portrait">
+          <video autoplay muted loop controls playsinline preload="metadata" poster="New%20folder/images/IMAGE%202.jpeg">
+            <source src="New%20folder/videos/VIDEO%202.mp4" type="video/mp4">
+            Your browser does not support this video.
+          </video>
+         
+        </figure>
+        <figure class="clip clip-portrait">
+          <video autoplay muted loop controls playsinline preload="metadata" poster="New%20folder/images/IMAGE%203.jpeg">
+            <source src="New%20folder/videos/VIDEO%203.mp4" type="video/mp4">
+            Your browser does not support this video.
+          </video>
+          
+        </figure>
+        <figure class="clip clip-portrait">
+          <video autoplay muted loop controls playsinline preload="metadata" poster="New%20folder/images/IMAGE%204.jpeg">
+            <source src="New%20folder/videos/VIDEO%204.mp4" type="video/mp4">
+            Your browser does not support this video.
+          </video>
+         
+        </figure>
+      </div>
+    </section>
+
+    <section class="memories" id="memories" aria-labelledby="memories-title">
+      <div class="section-heading">
+        <p class="eyebrow">❤️</p>
+        <h2 id="memories-title">Peace offering for being distant.</h2>
+      </div>
+      <div class="gallery">
+        <figure class="photo">
+          <img src="New%20folder/images/IMAGE%201.jpeg" alt="A favorite moment together" loading="lazy">
+          
+        </figure>
+        <figure class="photo">
+          <img src="New%20folder/images/IMAGE%202.jpeg" alt="A memory with my best friend" loading="lazy">
+         
+        </figure>
+        <figure class="photo">
+          <img src="New%20folder/images/IMAGE%203.jpeg" alt="A snapshot from our adventures" loading="lazy">
+          
+        </figure>
+        <figure class="photo">
+          <img src="New%20folder/images/IMAGE%204.jpeg" alt="A happy moment worth remembering" loading="lazy">
+          
+        </figure>
+        <figure class="photo">
+          <img src="New%20folder/images/IMAGE%205.jpeg" alt="A favorite photo from time together" loading="lazy">
+          
+        </figure>
+        <figure class="photo">
+          <img src="New%20folder/images/IMAGE%206.jpeg" alt="One more moment with my favorite person" loading="lazy">
+          
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Friendship status: permanent.</span>
+    <a href="#home">Back to the top ↑</a>
+  </footer>
+  <script>
+    document.querySelectorAll("video").forEach((video) => {
+      video.loop = true;
+      video.addEventListener("timeupdate", () => {
+        if (!Number.isFinite(video.duration)) return;
+
+        const fadeWindow = 0.4;
+        if (video.duration - video.currentTime <= fadeWindow) {
+          video.classList.add("is-loop-transition");
+        } else if (video.currentTime <= fadeWindow) {
+          video.classList.remove("is-loop-transition");
+        }
+      });
+      video.addEventListener("ended", () => {
+        video.classList.add("is-loop-transition");
+        video.currentTime = 0;
+        video.play().then(() => {
+          video.classList.remove("is-loop-transition");
+        }).catch(() => {});
+      });
+    });
+  </script>
+</body>
+</html>
